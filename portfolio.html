@@ -24,6 +24,85 @@
             color: black;
             font-weight: bolder;
         }
+        .title {
+            height: 350px;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+        }
+        h1 {
+            text-align: center;
+        }
+        .name {
+            font-size: 40px;
+        }
+        .portfolio {
+            font-size: 20px;
+        }
+        .logo {
+            font-size: 40px;
+        }
+        .explanation {
+            font-size: 20px;
+            font-weight: normal;
+        }
+        img {
+            width: 300px;
+            height: 380px;
+            margin-left: 10px;
+        }
+        .index {
+            margin-top: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .works {
+            background-color: whitesmoke;
+            padding: 20px;
+        }
+        .skill-body {
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .skill-item {
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            float: left;
+            width: 470px;
+        }
+        .star {
+            position: relative;
+            display:inline-block;
+        }
+        .star::before, .star::after {
+            content: '★★★★★';
+        }
+        .star::before {
+            color: gray;
+        }
+        .star::after {
+            position:absolute;
+            top: 0px;
+            left: 0px;
+            content: '★★★★★';
+            color: yellow;
+            overflow: hidden;
+            white-space: nowrap;
+            height: 20px;
+        }
+        .star.rate4::after {
+            width: 80%;
+        }
+        .star.rate3::after {
+            width: 60%;
+        }
+        .star.rate5::after {
+            width: 10%;
+        }
     </style>
     <body>
         <div class="header-box">
@@ -48,6 +127,83 @@
                     </ul>
                 </nav>
             </header>
+        </div>
+        <div class="main">
+            <section class="title">
+                <h1>
+                    <div class="name">Maiko Kaji</div>
+                    <div class="portfolio">Portfolio</div>
+                </h1>
+            </section>
+            <section class="works">
+                <h1>
+                    <div class="logo">Works</div>
+                    <p class="explanation">Web制作の記録です。</p>
+                </h1>
+                <div class="index">
+                    <img src="../PORTFOLIO/image/top.png">
+                    <img src="../PORTFOLIO/image/home2.png">
+                    <img src="../PORTFOLIO/image/public.png">
+                </div>
+            </section>
+            <section class="skill">
+                <h1>
+                    <div class="logo">Skill</div>
+                    <p class="explanation">現段階での自己評価です。</p>
+                </h1>
+                <div class="skill-body">
+                    <div class="skill-item">
+                        <div class="skill-logo">
+                            HTML
+                        </div>
+                        <div class="star rate4">
+                           
+                        </div>
+                        <div class="skill-index">
+                        
+                            ４ヶ月学習
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-logo">
+                            CSS
+                        </div>
+                        <div class="star">
+                            
+                        </div>
+                        <div class="skill-index">
+                        
+                            ４ヶ月学習
+                        </div>
+                    </div>
+                    <br>
+                    <div class="skill-item">
+                        <div class="skill-logo">
+                            Javascript
+                        </div>
+                        <div class="star">
+                           
+                        </div>
+                        <div class="skill-index">
+                        
+                            ４ヶ月学習
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-logo">
+                            php
+                        </div>
+                        <div class="star">
+            
+                        </div>
+                        <div class="skill-index">
+                        
+                            ４ヶ月学習
+                        </div>
+                    </div>
+                </div>    
+                </section>    
+            </section>
         </div>
     </body>
 </html>
