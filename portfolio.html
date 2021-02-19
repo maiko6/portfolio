@@ -5,19 +5,25 @@
         <title>ポートフォリオ</title>
     </head>
     <style>
+        body {
+            margin: 0px;
+        }
         .header-box {
             width: 100%;
             border-bottom: 1px solid;
+            position: fixed;
+            background-color: white;
         }
 
         .navi-list {
             display: flex;
-            justify-content: center;
+            padding: 0px;
         }
 
         .navi-index {
             flex: 1;
             list-style: none;
+            text-align: center;
         }
         .navi-link {
             text-decoration: none;
@@ -25,7 +31,7 @@
             font-weight: bolder;
         }
         .title {
-            height: 350px;
+            height: 550px;
             justify-content: center;
             align-items: center;
             display: flex;
@@ -43,7 +49,7 @@
             font-size: 40px;
         }
         .explanation {
-            font-size: 20px;
+            font-size: 16px;
             font-weight: normal;
         }
         img {
@@ -57,9 +63,9 @@
             justify-content: center;
             align-items: center;
         }
-        .works {
+        #works {
             background-color: whitesmoke;
-            padding: 20px;
+            padding: 30px;
         }
         .skill-body {
             justify-content: center;
@@ -105,9 +111,48 @@
             font-size: 26px;
             margin-right: 30px;
         }
-        .skill {
-            padding: 20px;
+        #skill {
+            padding: 30px;
+            background-color: whitesmoke;
         }
+        .photo {
+            width: 200px;
+            height: 220px;
+            float: left;
+            margin-left: 100px;
+        }
+        .profile {
+            float: left;
+            width: 50%;
+            padding: 20px;
+            margin-left: 60px;
+            text-indent: 1em;
+            
+        }
+        #about {
+            height: 550px;
+            padding: 30px;
+        }
+        .feature-index {
+            flex: 2;
+            margin-left: 50px;
+        }
+        .feature-img {
+            flex: 1;
+            border: solid 1px whitesmoke;
+        }
+        .feature-box {
+            display: flex;
+            flex-wrap: nowrap;
+            margin-top: 60px;
+        }
+        h3 {
+            margin-top: 30px;
+        }
+        #feature {
+            padding: 30px;
+        }
+        
     </style>
     <body>
         <div class="header-box">
@@ -115,16 +160,16 @@
                 <nav>
                     <ul class="navi-list">
                         <li class="navi-index">
-                            <a href="#" class="navi-link">Works</a>
+                            <a href="#works" class="navi-link">Works</a>
                         </li>
                         <li class="navi-index">
-                            <a href="#" class="navi-link">Feature</a>
+                            <a href="#feature" class="navi-link">Feature</a>
                         </li>
                         <li class="navi-index">
-                            <a href="#" class="navi-link">About</a>
+                            <a href="#about" class="navi-link">About</a>
                         </li>
                         <li class="navi-index">
-                            <a href="#" class="navi-link">Skill</a>
+                            <a href="#skill" class="navi-link">Skill</a>
                         </li>
                         <li class="navi-index">
                             <a href="#" class="navi-link">Contact</a>
@@ -140,7 +185,7 @@
                     <div class="portfolio">Portfolio</div>
                 </h1>
             </section>
-            <section class="works">
+            <section id="works">
                 <h1>
                     <div class="logo">Works</div>
                     <p class="explanation">Web制作の記録です。</p>
@@ -151,7 +196,29 @@
                     <img src="../PORTFOLIO/image/public.png">
                 </div>
             </section>
-            <section class="skill">
+            <section id="feature">
+                <h1>
+                    <div class="logo">Feature</div>
+                    <p class="explanation">制作物の概要</p>
+                </h1>
+                <div class="feature-box">
+                    <img src="../portfolio/image/home2.png" class="feature-img">
+                    <div class="feature-index">
+                        <p>その時々にメモをしたい言葉を簡単に記録し読み返し見つけることが<br>できるサービスです。</p>
+                        <ul>
+                            <li>アカウント登録、ログイン、ログアウト機能</li>
+                            <li>アカウントの公開設定機能</li>
+                            <li>ホーム画面で言葉を記録、削除できる</li>
+                            <li>公開アカウントの人々の記録は一覧表示で閲覧可能</li>
+                            <li>公開の記録一覧からお気に入りを保存することができる。</li>
+                            <li>有名な格言シリーズをホーム画面にランダム表示</li>
+                        </ul>
+                        <h3>使用した技術</h3>
+                        <P>HTML5 / CSS / PHP / phpMyAdmin / github</P>
+                    </div>
+                </div>
+            </section>
+            <section id="skill">
                 <h1>
                     <div class="logo">Skill</div>
                     <p class="explanation">現段階での自己評価です。</p>
@@ -204,10 +271,15 @@
                     </div>
                 </div>        
             </section>
-            <section class="about">
+            <section id="about">
                 <h1>
                     <div class="logo">about</div>
                 </h1>
+                    <img src="../portfolio/image/photo.png" class="photo">
+                <div class="profile">
+                    <p>はじめまして。加地麻郁子(まいこ)と申します。1987年に愛媛県で生まれました。大学在学中にはフィジー短期留学と、１年間のベトナムでのアルバイトを経験。卒業後は主にバーテンダーの仕事をし、修行を積み独立しバーを経営していました。人と関わることが仕事でしたのでコミュニケーションは得意です。もっと広い環境の中で新しいことにチャレンジしたいと思いプログラミングの学習を始めました。趣味は、海外旅行、スポーツ全般、映画、アニメ、料理、漫画などです。
+                    </p>
+                </div>
             </section>
         </div>
     </body>
