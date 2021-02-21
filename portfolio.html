@@ -2,6 +2,24 @@
 <html lang="ja">
     <head>
         <meta charset="UTF-8">
+        <script type="text/javascript" src="http://code.jquery.com/jquery-3.1.0.min.js"></script>
+        <script>
+            $(function() {
+                $('a[href^="#"]').click(function() {
+                    var speed = 200;
+                    var href = $(this).attr("href");
+                    var target = $(href == "#" || href == "" ? 'html' : href);
+                    var position = target.offset().top;
+                    $('body,html').animate({scrollTop:position}, speed, 'swing');
+                    return false;
+                });
+                $('a').hover(function() {
+                    $(this).not('.mail').css("color", "red");
+                }, function() {
+                    $(this).not('.mail').css("color", "black");
+                });
+            });
+        </script>
         <title>ポートフォリオ</title>
     </head>
     <style>
@@ -17,7 +35,8 @@
 
         .navi-list {
             display: flex;
-            padding: 0px;
+            padding: 15px;
+            margin: 0px;
         }
 
         .navi-index {
@@ -25,13 +44,17 @@
             list-style: none;
             text-align: center;
         }
-        .navi-link {
+        .navi-index a {
+            display: block;
+        }
+        .navi-link, #to-top a {
             text-decoration: none;
             color: black;
             font-weight: bolder;
+            display: block;
         }
-        .title {
-            height: 550px;
+        #title {
+            height: 655px;
             justify-content: center;
             align-items: center;
             display: flex;
@@ -65,7 +88,6 @@
         }
         #works {
             background-color: whitesmoke;
-            padding: 30px;
         }
         .skill-body {
             justify-content: center;
@@ -93,7 +115,7 @@
             top: 0px;
             left: 0px;
             content: '★★★★★';
-            color: yellow;
+            color: red;
             overflow: hidden;
             white-space: nowrap;
             height: 20px;
@@ -112,7 +134,6 @@
             margin-right: 30px;
         }
         #skill {
-            padding: 30px;
             background-color: whitesmoke;
         }
         .photo {
@@ -129,10 +150,7 @@
             text-indent: 1em;
             
         }
-        #about {
-            height: 550px;
-            padding: 30px;
-        }
+        
         .feature-index {
             flex: 2;
             margin-left: 50px;
@@ -149,9 +167,32 @@
         h3 {
             margin-top: 30px;
         }
-        #feature {
-            padding: 30px;
+        #feature, #works, #skill, #about, #contact {
+            padding: 50px;
         }
+        #about {
+            height: 530px;
+        }
+        .contact-box {
+            text-align: center;
+        }
+        #contact {
+            background-color: whitesmoke;
+        }
+        .profile-box {
+            display: flex;
+            margin-top: 80px;
+        }
+        #to-top, .footer-box {
+            text-align: center;
+            background-color: whitesmoke;
+        }
+        .footer-box p {
+            margin: 0px;
+            padding: 50px;
+        }
+        
+        
         
     </style>
     <body>
@@ -166,20 +207,20 @@
                             <a href="#feature" class="navi-link">Feature</a>
                         </li>
                         <li class="navi-index">
-                            <a href="#about" class="navi-link">About</a>
-                        </li>
-                        <li class="navi-index">
                             <a href="#skill" class="navi-link">Skill</a>
                         </li>
                         <li class="navi-index">
-                            <a href="#" class="navi-link">Contact</a>
+                            <a href="#about" class="navi-link">About</a>
+                        </li>
+                        <li class="navi-index">
+                            <a href="#contact" class="navi-link">Contact</a>
                         </li>
                     </ul>
                 </nav>
             </header>
         </div>
         <div class="main">
-            <section class="title">
+            <section id="title">
                 <h1>
                     <div class="name">Maiko Kaji</div>
                     <div class="portfolio">Portfolio</div>
@@ -204,7 +245,7 @@
                 <div class="feature-box">
                     <img src="../portfolio/image/home2.png" class="feature-img">
                     <div class="feature-index">
-                        <p>その時々にメモをしたい言葉を簡単に記録し読み返し見つけることが<br>できるサービスです。</p>
+                        <p>その時々にメモをしたい言葉を簡単に記録し読み返し見つけることができるサービスです。</p>
                         <ul>
                             <li>アカウント登録、ログイン、ログアウト機能</li>
                             <li>アカウントの公開設定機能</li>
@@ -273,14 +314,35 @@
             </section>
             <section id="about">
                 <h1>
-                    <div class="logo">about</div>
+                    <div class="logo">About</div>
                 </h1>
+                <div class="profile-box">
                     <img src="../portfolio/image/photo.png" class="photo">
-                <div class="profile">
-                    <p>はじめまして。加地麻郁子(まいこ)と申します。1987年に愛媛県で生まれました。大学在学中にはフィジー短期留学と、１年間のベトナムでのアルバイトを経験。卒業後は主にバーテンダーの仕事をし、修行を積み独立しバーを経営していました。人と関わることが仕事でしたのでコミュニケーションは得意です。もっと広い環境の中で新しいことにチャレンジしたいと思いプログラミングの学習を始めました。趣味は、海外旅行、スポーツ全般、映画、アニメ、料理、漫画などです。
-                    </p>
+                    <div class="profile">
+                        <p>はじめまして。加地麻郁子(まいこ)と申します。1987年に愛媛県で生まれました。大学在学中にはフィジー短期留学と、１年間のベトナムでのアルバイトを経験。卒業後は主にバーテンダーの仕事をし、修行を積み独立しバーを経営していました。人と関わることが仕事でしたのでコミュニケーションは得意です。もっと広い環境の中で新しいことにチャレンジしたいと思いプログラミングの学習を始めました。趣味は、海外旅行、スポーツ全般、映画、アニメ、料理、漫画などです。
+                        </p>
+                    </div>
+                </div>    
+            </section>
+            <section id="contact">
+                <h1>
+                    <div class="logo">Contact</div>
+                </h1>
+                <div class="contact-box">
+                    <p>お問い合わせは<a href="mailto:maiko.kaji9@gmail.com" class="mail">こちら</a>です。</p>
+                    <address>
+                        <a href="mailto:maiko.kaji9@gmail.com" class="mail">maiko.kaji9@gmail.com</a>
+                    </address>
                 </div>
             </section>
+            <section id="to-top">
+                <a href="#title">TOP</a>
+            </section>
         </div>
+        <footer>
+            <div class="footer-box">
+                <p>&copy;2021maiko</p>
+            </div>
+        </footer>
     </body>
 </html>
