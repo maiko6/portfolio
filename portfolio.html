@@ -2,24 +2,6 @@
 <html lang="ja">
     <head>
         <meta charset="UTF-8">
-        <script type="text/javascript" src="http://code.jquery.com/jquery-3.1.0.min.js"></script>
-        <script>
-            $(function() {
-                $('a[href^="#"]').click(function() {
-                    var speed = 200;
-                    var href = $(this).attr("href");
-                    var target = $(href == "#" || href == "" ? 'html' : href);
-                    var position = target.offset().top;
-                    $('body,html').animate({scrollTop:position}, speed, 'swing');
-                    return false;
-                });
-                $('a').hover(function() {
-                    $(this).not('.mail').css("color", "red");
-                }, function() {
-                    $(this).not('.mail').css("color", "black");
-                });
-            });
-        </script>
         <title>ポートフォリオ</title>
     </head>
     <style>
@@ -196,6 +178,9 @@
         
     </style>
     <body>
+        <script type="text/javascript"></script>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-3.1.0.min.js"></script>
+        <script type="text/javascript" src="portfolio.js"></script>
         <div class="header-box">
             <header>
                 <nav>
